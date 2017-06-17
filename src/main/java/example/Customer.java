@@ -3,9 +3,9 @@ package example;
 /**
  * Created by Alex on 6/17/2017.
  */
+
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * A entity object, like in any other Java application. In a typical real world
