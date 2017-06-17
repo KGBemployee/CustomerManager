@@ -27,11 +27,12 @@ public class CustomerForm extends FormLayout {
 
         setSizeUndefined();
         HorizontalLayout buttons = new HorizontalLayout(save, delete);
-        addComponents(firstName,lastName,email,birthdate,buttons);
+        addComponents(firstName, lastName, email, status, birthdate, buttons);
         status.setItems(CustomerStatus.values());
 
         save.setStyleName(ValoTheme.BUTTON_PRIMARY);
         save.setClickShortcut(ShortcutAction.KeyCode.ENTER);
+        delete.setStyleName(ValoTheme.BUTTON_DANGER);
 
         save.addClickListener(e -> this.save());
         delete.addClickListener(e -> this.delete());
