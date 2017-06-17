@@ -12,14 +12,15 @@
 //$v-border-radius: 4px;
 
 // Affects the color of some component elements, e.g Button, Panel title, etc
-//$v-background-color: hsl(210, 0%, 98%);
+//$v-background-color: hsl(198, 100%, 33%);
 // Affects the color of content areas, e.g  Panel and Window content, TextField input etc
 //$v-app-background-color: $v-background-color;
 
+
 // Affects the visual appearance of all components
-//$v-gradient: v-linear 8%;
-//$v-bevel-depth: 30%;
-//$v-shadow-opacity: 5%;
+$v-gradient: v-linear 8%;
+$v-bevel-depth: 30%;
+$v-shadow-opacity: 5%;
 
 // Defines colors for indicating status (focus, success, failure)
 //$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
@@ -35,6 +36,23 @@
   @include valo;
 
   // Insert your own theme rules here
+ .v-ui{
+   background-size:cover;
+   background: url("ge-logo.jpg") no-repeat center center;
+ }
+
+  .v-verticallayout{
+    opacity: 0.9;
+  }
+
+  .v-label {
+    color: #4286f4;
+    font-weight: bold;
+    font-size: larger;
+    display: block;
+    width: 150px;
+    float: left;
+  }
 
 }
 

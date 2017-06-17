@@ -27,6 +27,7 @@ public class MyUI extends UI {
     private TextField filterText = new TextField();
     private Button clearFilterTextBtn = new Button(FontAwesome.TIMES);
     private CustomerForm form = new CustomerForm(this);
+    private final Label label = new Label("Customer manager");
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -60,7 +61,7 @@ public class MyUI extends UI {
         grid.setSizeFull();
         main.setExpandRatio(grid,1);
 
-        layout.addComponents(toolbar,main);
+        layout.addComponents(label,toolbar,main);
 
         updateList();
 
