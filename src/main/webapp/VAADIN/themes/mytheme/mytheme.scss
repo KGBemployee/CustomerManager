@@ -37,8 +37,8 @@ $v-shadow-opacity: 5%;
 
   // Insert your own theme rules here
  .v-ui{
-   background-size:cover;
-   background: url("ge-logo.jpg") no-repeat center center;
+   background-size:contain;
+   background: url("ge-logo.jpg") no-repeat center;
  }
 
   .v-verticallayout{
