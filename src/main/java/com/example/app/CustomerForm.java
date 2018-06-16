@@ -1,4 +1,4 @@
-package example;
+package com.example.app;
 
 import com.vaadin.data.Binder;
 import com.vaadin.event.ShortcutAction;
