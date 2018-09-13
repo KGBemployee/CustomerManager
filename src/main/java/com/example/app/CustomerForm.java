@@ -16,6 +16,7 @@ public class CustomerForm extends FormLayout {
     private DateField birthdate = new DateField("Birthdate");
     private Button save = new Button("Save");
     private Button delete = new Button("Delete");
+    private Button cancel = new Button("Cancel");
 
     private Binder<Customer> binder = new Binder<>(Customer.class);
     private CustomerService service= CustomerService.getInstance();
@@ -26,16 +27,18 @@ public class CustomerForm extends FormLayout {
         this.myUI = myUI;
 
         setSizeUndefined();
-        HorizontalLayout buttons = new HorizontalLayout(save, delete);
+        HorizontalLayout buttons = new HorizontalLayout(save, delete, cancel);
         addComponents(firstName, lastName, email, status, birthdate, buttons);
         status.setItems(CustomerStatus.values());
 
         save.setStyleName(ValoTheme.BUTTON_PRIMARY);
         save.setClickShortcut(ShortcutAction.KeyCode.ENTER);
         delete.setStyleName(ValoTheme.BUTTON_DANGER);
+        cancel.setStyleName(ValoTheme.BUTTON_FRIENDLY);
 
         save.addClickListener(e -> this.save());
         delete.addClickListener(e -> this.delete());
+        cancel.addClickListener(e -> this.cancel());
         binder.bindInstanceFields(this);
     }
 
@@ -56,6 +59,11 @@ public class CustomerForm extends FormLayout {
 
     private void save(){
         service.save(customer);
+        myUI.updateList();
+        setVisible(false);
+    }
+
+    private void cancel(){
         myUI.updateList();
         setVisible(false);
     }

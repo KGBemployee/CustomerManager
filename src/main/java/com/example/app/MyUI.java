@@ -15,10 +15,10 @@ import javax.servlet.annotation.WebServlet;
 import java.util.List;
 
 /**
- * This UI is the application entry point. A UI may either represent a browser window 
+ * This UI is the application entry point. A UI may either represent a browser window
  * (or tab) or some part of a html page where a Vaadin application is embedded.
  * <p>
- * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be 
+ * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be
  * overridden to add component to the user interface and initialize non-component functionality.
  */
 @SpringUI
@@ -46,7 +46,7 @@ public class MyUI extends UI {
         clearFilterTextBtn.addClickListener(e -> filterText.clear());
 
         CssLayout cssLayoutFiltering = new CssLayout();
-        cssLayoutFiltering.addComponents(filterText,clearFilterTextBtn);
+        cssLayoutFiltering.addComponents(filterText, clearFilterTextBtn);
         cssLayoutFiltering.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
         Button addCustomerBtn = new Button("Add new customer");
         addCustomerBtn.addClickListener(e -> {
@@ -54,29 +54,29 @@ public class MyUI extends UI {
             form.setCustomer(new Customer());
         });
 
-        HorizontalLayout toolbar = new HorizontalLayout(cssLayoutFiltering,addCustomerBtn);
+        HorizontalLayout toolbar = new HorizontalLayout(cssLayoutFiltering, addCustomerBtn);
 
-        grid.setColumns("firstName","lastName","email");
+        grid.setColumns("firstName", "lastName", "email");
 
 //        layout.addComponents(cssLayoutFiltering,grid);
 
         HorizontalLayout main = new HorizontalLayout(grid, form);
         main.setSizeFull();
         grid.setSizeFull();
-        main.setExpandRatio(grid,1);
+        main.setExpandRatio(grid, 1);
 
-        layout.addComponents(label,toolbar,main);
+        layout.addComponents(label, toolbar, main);
 
         updateList();
 
         setContent(layout);
 
         grid.asSingleSelect().addValueChangeListener(event -> {
-           if( event.getValue() == null){
-               form.setVisible(false);
-           }else{
-               form.setCustomer(event.getValue());
-           }
+            if (event.getValue() == null) {
+                form.setVisible(false);
+            } else {
+                form.setCustomer(event.getValue());
+            }
         });
     }
 
