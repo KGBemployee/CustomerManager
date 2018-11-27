@@ -23,7 +23,7 @@ import java.util.List;
  */
 @SpringUI
 @Theme("mytheme")
-@Title("Cutomer Manager")
+@Title("Customer Manager")
 public class MyUI extends UI {
 
     private CustomerService service = CustomerService.getInstance();
