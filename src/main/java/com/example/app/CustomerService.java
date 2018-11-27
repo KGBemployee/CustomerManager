@@ -160,7 +160,7 @@ public class CustomerService {
      */
     public void ensureTestData() {
         if (findAll().isEmpty()) {
-            final String[] names = new String[] { "Matt McCrudden", "Cristi Racasanu", "Gabriel Brezuica", "Devon Sanders",
+            final String[] names = new String[] { "Mitica McCrudul", "Cristi Racasanu", "Gabriel Brezuica", "Devon Sanders",
                     "Jesus Montoya", "Donald Trump", "John Cena", "Alex Costea" };
             Random r = new Random(0);
             for (String name : names) {
