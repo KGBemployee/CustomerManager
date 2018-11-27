@@ -55,12 +55,14 @@ public class CustomerForm extends FormLayout {
         service.delete(customer);
         myUI.updateList();
         setVisible(false);
+        Notification.show("Customer deleted!", Notification.Type.TRAY_NOTIFICATION);
     }
 
     private void save(){
         service.save(customer);
         myUI.updateList();
         setVisible(false);
+        Notification.show("Customer created!", Notification.Type.TRAY_NOTIFICATION);
     }
 
     private void cancel(){
